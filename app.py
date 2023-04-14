@@ -10,9 +10,9 @@ def init():
     device = 0 if torch.cuda.is_available() else -1
 
     # Flan-T5 version, if changed be sure to update in download.py too
-    model_name = "google/flan-t5-large"
+    model_name = "google/flan-ul2"
     tokenizer = T5Tokenizer.from_pretrained(model_name)
-    model = T5ForConditionalGeneration.from_pretrained(model_name).to("cuda")
+    model = T5ForConditionalGeneration.from_pretrained(model_name, device_map="auto", load_in_8bit=True)
 
 # Inference is ran for every server call
 # Reference your preloaded global model variable here.
