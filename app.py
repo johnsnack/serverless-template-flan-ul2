@@ -1,5 +1,5 @@
 import torch
-from transformers import T5Tokenizer, T5ForConditionalGeneration
+from transformers import T5Tokenizer, T5ForConditionalGeneration, AutoTokenizer
 
 # Init is ran on server startup
 # Load your model to GPU as a global variable here using the variable name "model"
@@ -11,7 +11,7 @@ def init():
 
     # Flan-T5 version, if changed be sure to update in download.py too
     model_name = "google/flan-ul2"
-    tokenizer = T5Tokenizer.from_pretrained(model_name)
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = T5ForConditionalGeneration.from_pretrained(model_name, device_map="auto", load_in_8bit=True)
 
 # Inference is ran for every server call
