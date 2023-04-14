@@ -3,12 +3,12 @@
 
 # In this example: A Huggingface BERT model
 
-from transformers import T5Tokenizer, T5ForConditionalGeneration
+from transformers import T5Tokenizer, T5ForConditionalGeneration, AutoTokenizer
 
 def download_model():
     # do a dry run of loading the huggingface model, which will download weights
     model_name = "google/flan-ul2"
-    tokenizer = T5Tokenizer.from_pretrained(model_name)
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = T5ForConditionalGeneration.from_pretrained(model_name, device_map="auto", load_in_8bit=True)
 
 if __name__ == "__main__":
