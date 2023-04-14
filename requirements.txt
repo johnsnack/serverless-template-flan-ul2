@@ -4,3 +4,4 @@ accelerate
 sentencepiece
 websockets==10.0
 bitsandbytes
+torch
