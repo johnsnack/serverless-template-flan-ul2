@@ -3,3 +3,4 @@ transformers==4.24.0
 accelerate==0.14.0 
 sentencepiece==0.1.97 
 websockets==10.0
+bitsandbytes
