@@ -3,5 +3,5 @@ transformers
 accelerate
 sentencepiece
 websockets==10.0
-bitsandbytes
+bitsandbytes==0.38.1
 torch
